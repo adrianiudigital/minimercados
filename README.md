@@ -81,7 +81,7 @@ npm run dev
 
 ## 👨‍💻 Autor
 
-Desarrollado con ❤️ por **Adrián Costa**  
-📍 Valledupar, Colombia  
+Desarrollado con por **Adrián Costa**  
+Valledupar, Colombia  
 
 
