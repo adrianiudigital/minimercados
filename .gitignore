@@ -1,0 +1,65 @@
+# === JAVA / SPRING ===
+/target/
+*.class
+*.jar
+*.war
+*.log
+*.iml
+/.idea/
+
+# === CONFIG LOCAL ===
+*.env
+*.local
+*.properties
+*.yml
+!.src/main/resources/application*.yml
+
+# === FRONTEND (React + Node) ===
+/frontend-pos/node_modules/
+/frontend-pos/.env
+/frontend-pos/.env.local
+/frontend-pos/package-lock.json
+/frontend-pos/yarn.lock
+/frontend-pos/dist/
+frontend-pos/.vite/
+
+# === SISTEMA ===
+.DS_Store
+Thumbs.db
+
+# === BACKEND GRADLE O MAVEN ===
+/.gradle/
+/build/
+!.mvn/wrapper/maven-wrapper.jar
+
+# === VS CODE O IDE ===
+.vscode/
+*.swp
+
+# === COVERAGE & TESTS ===
+coverage/
+.nyc_output/
+jest-html-reporters-*.html
+*.lcov
+
+# === DOCUMENTACIÓN O ARCHIVOS TEMPORALES ===
+documentation/**/__MACOSX/
+documentation/**/*.tmp
+documentation/**/*.bak
+*.log
+
+# === ZIP o archivos generados manualmente ===
+*.zip
+*.rar
+*.7z
+
+# === LINUX/MAC CACHES ===
+*.out
+*.pid
+*.seed
+*.pid.lock
+
+
+
+0505-EA20
+
