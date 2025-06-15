@@ -12,7 +12,7 @@ import java.util.List;
 // TODO: DOCUMENTAR CON ANOTACIONES SWAGGER
 @RestController
 @RequestMapping("/providers")
-@Slf4j
+// @Slf4j
 public class ProviderController {
 
     private final ProviderService providerService;
@@ -26,7 +26,7 @@ public class ProviderController {
     // TODO: Documentación Swagger, security,
     @GetMapping
     public ResponseEntity<List<Provider>> getProviders() {
-        log.info("Llamando a getProviders");
+        // log.info("Llamando a getProviders");
         return ResponseEntity.ok(providerService.getAllProviders());
     }
 
@@ -39,7 +39,7 @@ public class ProviderController {
     // TODO: Documentación Swagger, security, DTO
     @PostMapping
     public ResponseEntity<Provider> saveProviders(@RequestBody Provider provider) {
-        log.info("Llamando a saveProviders");
+        // log.info("Llamando a saveProviders");
         return ResponseEntity.ok(providerService.saveProvider(provider));
     }
 

@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
-@Slf4j
+// @Slf4j
 public class ProviderServiceImpl implements ProviderService {
 
     private final ProviderPort providerPort;
@@ -21,7 +21,7 @@ public class ProviderServiceImpl implements ProviderService {
     @Override
     public List<Provider> getAllProviders() {
         //
-        log.debug("dubugging getAllProviders");
+        // log.debug("dubugging getAllProviders");
         return providerPort.getAll();
     }
 

@@ -1,4 +1,4 @@
-package co.edu.iudigital.pos.controller;
+package co.edu.iudigital.pos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;

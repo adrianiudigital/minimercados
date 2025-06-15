@@ -10,7 +10,35 @@ class HexagonalArchitectureTest {
     private final JavaClasses importedClasses =
             new ClassFileImporter().importPackages("co.edu.iudigital.pos");
 
-    // @Test
+    @Test
+    void servicesShouldOnlyDependOnPortsAndDomains() {
+        ArchRuleDefinition.classes()
+                .that().resideInAPackage("..service..")
+                .should().onlyDependOnClassesThat()
+                .resideInAnyPackage(
+                        "co.edu.iudigital.pos.service..",
+                        "co.edu.iudigital.pos.port..",
+                        "co.edu.iudigital.pos.domain..",
+                        "java.."
+                )
+                .check(importedClasses);
+    }
+
+    @Test
+    void domainsShouldOnlyDependOnDomainsAndInfrastructureAndPorts() {
+        ArchRuleDefinition.classes()
+                .that().resideInAPackage("..domain..")
+                .should().onlyDependOnClassesThat()
+                .resideInAnyPackage(
+                        "co.edu.iudigital.pos.domain..",
+                        "com.fasterxml.jackson..",
+                        "lombok..",
+                        "java.."
+                )
+                .check(importedClasses);
+    }
+
+    @Test
     void controllersShouldOnlyDependOnServicesAndDomains() {
         ArchRuleDefinition.classes()
                 .that().resideInAPackage("..controller..")
@@ -25,21 +53,7 @@ class HexagonalArchitectureTest {
                 .check(importedClasses);
     }
 
-    // @Test
-    void servicesShouldOnlyDependOnPortsAndDomains() {
-        ArchRuleDefinition.classes()
-                .that().resideInAPackage("..service..")
-                .should().onlyDependOnClassesThat()
-                .resideInAnyPackage(
-                        "co.edu.iudigital.pos.service..",
-                        "co.edu.iudigital.pos.port..",
-                        "co.edu.iudigital.pos.domain..",
-                        "java.."
-                )
-                .check(importedClasses);
-    }
-
-    // @Test
+    @Test
     void adaptersShouldOnlyDependOnDomainsAndInfrastructureAndPorts() {
         ArchRuleDefinition.classes()
                 .that().resideInAPackage("..adapter..")
@@ -49,21 +63,8 @@ class HexagonalArchitectureTest {
                         "co.edu.iudigital.pos.domain..",
                         "co.edu.iudigital.pos.infrastructure..",
                         "co.edu.iudigital.pos.port..",
+                        "org.springframework.stereotype..",
                         "org.mapstruct..",
-                        "java.."
-                )
-                .check(importedClasses);
-    }
-
-    // @Test
-    void domainsShouldOnlyDependOnDomainsAndInfrastructureAndPorts() {
-        ArchRuleDefinition.classes()
-                .that().resideInAPackage("..domain..")
-                .should().onlyDependOnClassesThat()
-                .resideInAnyPackage(
-                        "co.edu.iudigital.pos.domain..",
-                        "com.fasterxml.jackson..",
-                        "lombok..",
                         "java.."
                 )
                 .check(importedClasses);
