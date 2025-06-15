@@ -11,7 +11,7 @@ Este proyecto es una solución completa para la gestión de un minimercado. Perm
 - Spring Boot
 - Maven
 - H2 (modo desarrollo)
-- PostgreSQL (modo producción)
+- MySQL (modo producción)
 - JPA (Hibernate)
 
 ### Frontend
@@ -24,21 +24,42 @@ Este proyecto es una solución completa para la gestión de un minimercado. Perm
 ## 📦 Estructura del Proyecto
 
 ```
-minimercados/
+
+MINIMERCADOS/
+├── documentation/               # Documentación del sistema (C4 model)
+│   ├── img/
+│   ├── C4_documentation.md
+│   ├── C4_documentation.pdf
+│   └── C4_documentation.png
 │
-├── backend-pos/
-│   └── src/main/java/co/edu/iudigital/pos/...
+├── frontend-pos/               # Proyecto frontend (React + Vite)
+│   ├── public/
+│   ├── src/
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── README.md
+│   ├── vite.config.js
+│   └── zztext.txt
+│
+├── posV6-1/pos/                # Proyecto backend (Java + Spring Boot)
+│   ├── .idea/
+│   ├── .mvn/
+│   ├── grafana/
+│   ├── logs/
+│   ├── src/
+│   ├── target/
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── HELP.md
+│   ├── mvnw
+│   ├── mvnw.cmd
 │   └── pom.xml
 │
-├── frontend-pos/
-│   └── src/
-│       └── components/
-│       └── App.jsx
-│       └── main.jsx
-│   └── package.json
-│
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
+
 ```
 
 ---
