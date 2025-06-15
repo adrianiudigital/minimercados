@@ -24,7 +24,9 @@ function ProductList() {
     const productData = {
       name,
       price: parseFloat(price),
-      stock: parseInt(stock)
+      stock: parseInt(stock),
+      categoryId: 1,  // ⚠️ Asignado para evitar errores
+      providerId: 1   // ⚠️ Asignado para evitar errores
     };
 
     try {
